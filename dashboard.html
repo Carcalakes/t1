@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAWSAQ - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Your BAWSAQ Dashboard</h1>
+            <p class="subheading">Your Portfolio</p>
+        </header>
+
+        <section class="user-info">
+            <h2>Welcome, <span id="username-placeholder">User</span></h2>
+        </section>
+
+        <section class="portfolio">
+            <h2>Your Portfolio</h2>
+            <div id="portfolio-list">
+                <!-- User's stock portfolio will be shown here -->
+            </div>
+        </section>
+
+        <section class="stock-market">
+            <h2>Stock Market</h2>
+            <div id="stocks">
+                <div class="stock-item">
+                    <p>AmCo</p>
+                    <p>$100</p>
+                    <button>Buy</button>
+                </div>
+                <div class="stock-item">
+                    <p>GlobalTech</p>
+                    <p>$200</p>
+                    <button>Buy</button>
+                </div>
+                <div class="stock-item">
+                    <p>FastCorp</p>
+                    <p>$300</p>
+                    <button>Buy</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Get username from localStorage and display it on the dashboard
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('username-placeholder').innerText = username;
+        } else {
+            // If no username is found in localStorage, redirect back to login
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
